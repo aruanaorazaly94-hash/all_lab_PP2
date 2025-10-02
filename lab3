@@ -1,0 +1,13 @@
+def is_above_55(movie):
+    return movie["imdb"] > 5.5
+def filter_above_55(movies):
+    return [movie for movie in movies if movie["imdb"] > 5.5]
+def movies_by_category(movies, category):
+    return [movie for movie in movies if movie["category"] == category]
+def average_imdb(movies):
+    return sum(movie["imdb"] for movie in movies) / len(movies)
+def average_imdb_by_category(movies, category):
+    category_movies = [movie for movie in movies if movie["category"] == category]
+    if len(category_movies) == 0:
+        return 0   # если в категории нет фильмов
+    return sum(movie["imdb"] for movie in category_movies) / len(category_movies)
